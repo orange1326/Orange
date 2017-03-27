@@ -26,7 +26,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTextEdit" name="textEdit">
+   <widget class="QTextEdit" name="textEdit_input">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -36,7 +36,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="pushButton_send">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -49,7 +49,7 @@
      <string>发送</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="pushButton_open">
     <property name="geometry">
      <rect>
       <x>590</x>
@@ -75,7 +75,7 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="pushButton_clear_dispaly">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -88,7 +88,7 @@
      <string>清空接收区</string>
     </property>
    </widget>
-   <widget class="QListWidget" name="listWidget">
+   <widget class="QListWidget" name="listWidget_display">
     <property name="geometry">
      <rect>
       <x>170</x>
@@ -96,6 +96,15 @@
       <width>301</width>
       <height>321</height>
      </rect>
+    </property>
+    <property name="autoScroll">
+     <bool>true</bool>
+    </property>
+    <property name="autoScrollMargin">
+     <number>16</number>
+    </property>
+    <property name="sortingEnabled">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label_10">
@@ -124,7 +133,7 @@
      <number>0</number>
     </property>
     <widget class="QWidget" name="page">
-     <widget class="QCheckBox" name="checkBox_4">
+     <widget class="QCheckBox" name="checkBox_repeat">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -150,7 +159,7 @@
        <enum>Qt::Vertical</enum>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>19</x>
@@ -461,7 +470,7 @@
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
-     <widget class="QCheckBox" name="checkBox_5">
+     <widget class="QCheckBox" name="checkBox_auto_newline">
       <property name="geometry">
        <rect>
         <x>19</x>
@@ -474,7 +483,7 @@
        <string>自动换行</string>
       </property>
      </widget>
-     <widget class="QSpinBox" name="spinBox">
+     <widget class="QSpinBox" name="spinBox_time">
       <property name="geometry">
        <rect>
         <x>86</x>
@@ -582,14 +591,14 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_8">
        <item>
-        <widget class="QRadioButton" name="radioButton_3">
+        <widget class="QRadioButton" name="radioButton_ASCII">
          <property name="text">
           <string>ASCII</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="radioButton_4">
+        <widget class="QRadioButton" name="radioButton_HEX">
          <property name="text">
           <string>HEX</string>
          </property>
@@ -623,7 +632,7 @@
        <enum>Qt::Vertical</enum>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>18</x>
@@ -636,14 +645,14 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_7">
          <item>
-          <widget class="QRadioButton" name="radioButton">
+          <widget class="QRadioButton" name="radioButton2_ASCII">
            <property name="text">
             <string>ASCII</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton_2">
+          <widget class="QRadioButton" name="radioButton2_HEX">
            <property name="text">
             <string>HEX</string>
            </property>
@@ -652,21 +661,21 @@
         </layout>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox">
+        <widget class="QCheckBox" name="checkBox2_auto_newline">
          <property name="text">
           <string>自动换行</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_2">
+        <widget class="QCheckBox" name="checkBox_show_send">
          <property name="text">
           <string>显示发送</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="checkBox_3">
+        <widget class="QCheckBox" name="checkBox_show_time">
          <property name="text">
           <string>显示时间</string>
          </property>
@@ -1067,7 +1076,7 @@
      <string>TextLabel</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>480</x>
@@ -1080,14 +1089,14 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_9">
        <item>
-        <widget class="QCheckBox" name="checkBox_6">
+        <widget class="QCheckBox" name="checkBox_custom1">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="lineEdit_custom1_name">
          <property name="maximumSize">
           <size>
            <width>40</width>
@@ -1097,21 +1106,21 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_2"/>
+        <widget class="QLineEdit" name="lineEdit_custom1_key"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_10">
        <item>
-        <widget class="QCheckBox" name="checkBox_7">
+        <widget class="QCheckBox" name="checkBox_custom2">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_3">
+        <widget class="QLineEdit" name="lineEdit_custom2_name">
          <property name="maximumSize">
           <size>
            <width>40</width>
@@ -1121,21 +1130,21 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_4"/>
+        <widget class="QLineEdit" name="lineEdit_custom2_key"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_26">
        <item>
-        <widget class="QCheckBox" name="checkBox_23">
+        <widget class="QCheckBox" name="checkBox_custom3">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_35">
+        <widget class="QLineEdit" name="lineEdit_custom3_name">
          <property name="maximumSize">
           <size>
            <width>40</width>
@@ -1145,21 +1154,21 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_36"/>
+        <widget class="QLineEdit" name="lineEdit_custom3_key"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_11">
        <item>
-        <widget class="QCheckBox" name="checkBox_8">
+        <widget class="QCheckBox" name="checkBox_custom4">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_5">
+        <widget class="QLineEdit" name="lineEdit_custom4_name">
          <property name="maximumSize">
           <size>
            <width>40</width>
@@ -1169,21 +1178,21 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_6"/>
+        <widget class="QLineEdit" name="lineEdit_custom4_key"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_25">
        <item>
-        <widget class="QCheckBox" name="checkBox_22">
+        <widget class="QCheckBox" name="checkBox_custom5">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_33">
+        <widget class="QLineEdit" name="lineEdit_custom5_name">
          <property name="maximumSize">
           <size>
            <width>40</width>
@@ -1193,21 +1202,21 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_34"/>
+        <widget class="QLineEdit" name="lineEdit_custom5_key"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_12">
        <item>
-        <widget class="QCheckBox" name="checkBox_9">
+        <widget class="QCheckBox" name="checkBox_custom6">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_7">
+        <widget class="QLineEdit" name="lineEdit_custom6_name">
          <property name="maximumSize">
           <size>
            <width>40</width>
@@ -1217,21 +1226,21 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_8"/>
+        <widget class="QLineEdit" name="lineEdit_custom6_key"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_24">
        <item>
-        <widget class="QCheckBox" name="checkBox_21">
+        <widget class="QCheckBox" name="checkBox_custom7">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_31">
+        <widget class="QLineEdit" name="lineEdit_custom8_name">
          <property name="maximumSize">
           <size>
            <width>40</width>
@@ -1241,21 +1250,21 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_32"/>
+        <widget class="QLineEdit" name="lineEdit_custom8_key"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_13">
        <item>
-        <widget class="QCheckBox" name="checkBox_10">
+        <widget class="QCheckBox" name="checkBox_custom9">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_9">
+        <widget class="QLineEdit" name="lineEdit_custom9_name">
          <property name="maximumSize">
           <size>
            <width>40</width>
@@ -1265,21 +1274,21 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_10"/>
+        <widget class="QLineEdit" name="lineEdit_custom9_key"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_14">
        <item>
-        <widget class="QCheckBox" name="checkBox_11">
+        <widget class="QCheckBox" name="checkBox_custom10">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_11">
+        <widget class="QLineEdit" name="lineEdit_custom10_name">
          <property name="maximumSize">
           <size>
            <width>40</width>
@@ -1289,21 +1298,21 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_12"/>
+        <widget class="QLineEdit" name="lineEdit_custom10_key"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_15">
        <item>
-        <widget class="QCheckBox" name="checkBox_12">
+        <widget class="QCheckBox" name="checkBox_custom11">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_13">
+        <widget class="QLineEdit" name="lineEdit_custom11_name">
          <property name="maximumSize">
           <size>
            <width>40</width>
@@ -1313,21 +1322,21 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_14"/>
+        <widget class="QLineEdit" name="lineEdit_custom11_key"/>
        </item>
       </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_16">
        <item>
-        <widget class="QCheckBox" name="checkBox_13">
+        <widget class="QCheckBox" name="checkBox_custom12">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_15">
+        <widget class="QLineEdit" name="lineEdit_custom12_name">
          <property name="maximumSize">
           <size>
            <width>40</width>
@@ -1337,7 +1346,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_16"/>
+        <widget class="QLineEdit" name="lineEdit_custom12_key"/>
        </item>
       </layout>
      </item>
