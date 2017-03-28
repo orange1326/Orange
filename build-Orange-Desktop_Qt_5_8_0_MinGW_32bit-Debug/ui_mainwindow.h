@@ -16,7 +16,6 @@
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
-#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -133,7 +132,6 @@ public:
     QComboBox *comboBox_18;
     QFrame *line_20;
     QLabel *label_23;
-    QGraphicsView *graphicsView;
     QLabel *label_24;
     QWidget *layoutWidget3;
     QVBoxLayout *verticalLayout_3;
@@ -181,6 +179,7 @@ public:
     QCheckBox *checkBox_custom12;
     QLineEdit *lineEdit_custom12_name;
     QLineEdit *lineEdit_custom12_key;
+    QLabel *label_pic;
     QMenuBar *menuBar;
     QMenu *menu_F;
     QMenu *menu_E;
@@ -210,7 +209,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         textEdit_input = new QTextEdit(centralWidget);
         textEdit_input->setObjectName(QStringLiteral("textEdit_input"));
-        textEdit_input->setGeometry(QRect(170, 350, 301, 78));
+        textEdit_input->setGeometry(QRect(170, 337, 301, 91));
         pushButton_send = new QPushButton(centralWidget);
         pushButton_send->setObjectName(QStringLiteral("pushButton_send"));
         pushButton_send->setGeometry(QRect(480, 400, 75, 23));
@@ -227,7 +226,7 @@ public:
         pushButton_clear_dispaly->setGeometry(QRect(480, 350, 75, 23));
         listWidget_display = new QListWidget(centralWidget);
         listWidget_display->setObjectName(QStringLiteral("listWidget_display"));
-        listWidget_display->setGeometry(QRect(170, 21, 301, 321));
+        listWidget_display->setGeometry(QRect(170, 21, 301, 311));
         listWidget_display->setAutoScroll(true);
         listWidget_display->setAutoScrollMargin(16);
         listWidget_display->setSortingEnabled(false);
@@ -426,6 +425,7 @@ public:
         horizontalLayout_8->setContentsMargins(0, 0, 0, 0);
         radioButton_ASCII = new QRadioButton(layoutWidget1);
         radioButton_ASCII->setObjectName(QStringLiteral("radioButton_ASCII"));
+        radioButton_ASCII->setChecked(true);
 
         horizontalLayout_8->addWidget(radioButton_ASCII);
 
@@ -457,6 +457,8 @@ public:
         horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
         radioButton2_ASCII = new QRadioButton(layoutWidget2);
         radioButton2_ASCII->setObjectName(QStringLiteral("radioButton2_ASCII"));
+        radioButton2_ASCII->setFocusPolicy(Qt::ClickFocus);
+        radioButton2_ASCII->setChecked(true);
 
         horizontalLayout_7->addWidget(radioButton2_ASCII);
 
@@ -470,6 +472,12 @@ public:
 
         checkBox2_auto_newline = new QCheckBox(layoutWidget2);
         checkBox2_auto_newline->setObjectName(QStringLiteral("checkBox2_auto_newline"));
+        checkBox2_auto_newline->setEnabled(true);
+        QFont font;
+        font.setStyleStrategy(QFont::PreferDefault);
+        checkBox2_auto_newline->setFont(font);
+        checkBox2_auto_newline->setCheckable(true);
+        checkBox2_auto_newline->setChecked(false);
 
         verticalLayout_2->addWidget(checkBox2_auto_newline);
 
@@ -638,10 +646,6 @@ public:
         label_23->setObjectName(QStringLiteral("label_23"));
         label_23->setGeometry(QRect(20, 0, 51, 20));
         stackedWidget->addWidget(page_2);
-        graphicsView = new QGraphicsView(centralWidget);
-        graphicsView->setObjectName(QStringLiteral("graphicsView"));
-        graphicsView->setGeometry(QRect(590, 350, 61, 41));
-        graphicsView->setStyleSheet(QStringLiteral("border-image: url(:/image/orange_noColor.png);"));
         label_24 = new QLabel(centralWidget);
         label_24->setObjectName(QStringLiteral("label_24"));
         label_24->setGeometry(QRect(160, 450, 54, 12));
@@ -895,6 +899,9 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout_16);
 
+        label_pic = new QLabel(centralWidget);
+        label_pic->setObjectName(QStringLiteral("label_pic"));
+        label_pic->setGeometry(QRect(590, 360, 54, 12));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -1061,6 +1068,7 @@ public:
         checkBox_custom10->setText(QString());
         checkBox_custom11->setText(QString());
         checkBox_custom12->setText(QString());
+        label_pic->setText(QString());
         menu_F->setTitle(QApplication::translate("MainWindow", "\346\226\207\344\273\266(&F)", Q_NULLPTR));
         menu_E->setTitle(QApplication::translate("MainWindow", "\347\274\226\350\276\221(&E)", Q_NULLPTR));
         menu_V->setTitle(QApplication::translate("MainWindow", "\350\247\206\345\233\276(&V)", Q_NULLPTR));

@@ -6,9 +6,18 @@ SerialTool::SerialTool()
     serial_port = new QSerialPort();
 }
 
+SerialTool::SerialTool(QObject *parent) : QObject(parent)
+{
+    serial_port = new QSerialPort();
+}
+
 void SerialTool::openSerialConfig(QVector<QString> *para)
 {
     serial_port->setPortName(para->at(0));
+    for(int i = 0;i<5;i++)
+    {
+        //qDebug() << para->at(i);
+    }
     //set baud
     switch (para->at(1).toLong()) {
     case 1200:
@@ -58,7 +67,7 @@ void SerialTool::openSerialConfig(QVector<QString> *para)
         break;
     }
     //set parity
-    switch (para->at(3).toInt()) {
+    switch (0) {
     case 0:
         serial_port->setParity(QSerialPort::NoParity);
         break;
@@ -116,16 +125,31 @@ void SerialTool::closeSerial()
 void SerialTool::searchSerial()
 {
     QList<QSerialPortInfo> lists= serial_port_info->availablePorts();
-
-    string_serialport.clear();
+    //qDebug() << "SerialList:" + lists.count();
+    if(lists.count() == 0)
+    {
+        serial_name_vector.clear();
+        string_lastSerialport.clear();
+        string_serialport.clear();
+    }
     for(int i = 0;i<lists.count();i++)
     {
-        qDebug() << lists.at(i).portName();
+        string_serialport.clear();
+        //qDebug() << lists.at(i).portName();
         string_serialport.append(lists.at(i).portName());
         if(string_serialport == "\n")
         {
             continue;
         }
+        //qDebug() << string_serialport + " " + string_lastSerialport;
+
+        if(string_serialport == string_lastSerialport)
+        {
+            //qDebug() << serial_name_vector.at(0);
+            //qDebug() << "12344";
+            continue;
+        }
+        string_lastSerialport = string_serialport;
         serial_name_vector.append(string_serialport);
     }
 }
@@ -137,5 +161,10 @@ QVector<QString> SerialTool::getSerialName()
 QSerialPort *SerialTool::getCurrentOpenSerial()
 {
     return serial_port;
+}
+
+bool SerialTool::isOpen()
+{
+    return serial_port->isOpen();
 }
 

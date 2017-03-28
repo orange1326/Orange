@@ -19,25 +19,28 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    toolBarConfig();
+    void toolBarConfig();
 
     void serialConfig();
     
     void menuBarConfig();
-
 private:
     Ui::MainWindow *ui;
     SerialTool *serialTool;
     QTimer *timer;
+    QTimer *timer2;
 
 private slots:
     void on_pushButton_open_clicked();
     void on_pushButton_clear_dispaly_clicked();
+    void on_pushButton_send_clicked();
+    void on_radioButton2_ASCII_clicked();
 
 public slots:
     void display();
     void setCurrentRow(int row);
     void showAboutDialog();
+    void showSerialResult();
 };
 
 #endif // MAINWINDOW_H
