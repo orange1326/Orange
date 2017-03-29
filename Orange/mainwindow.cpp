@@ -5,6 +5,7 @@
 #include <QPixmap>
 #include <QByteArray>
 #include <QScrollBar>
+#include <QTextCodec>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -15,9 +16,10 @@ MainWindow::MainWindow(QWidget *parent) :
     this->setWindowTitle("Orange Tool");
 
     serialTool = new SerialTool();
+
     timer = new QTimer(this);
     timer2 = new QTimer(this);
-
+    codec = QTextCodec::codecForName("GB18030");
 
     menuBarConfig();
     toolBarConfig();
@@ -81,20 +83,24 @@ void MainWindow::on_pushButton_open_clicked()
 
 void MainWindow::display()
 {
-    QListWidgetItem *item;
+    QListWidgetItem *itemReceiver;
     QByteArray arraySerial = serialTool->getCurrentOpenSerial()->readAll();
     if(ui->radioButton2_ASCII->isChecked())
     {
-        item = new QListWidgetItem(arraySerial);
+        itemReceiver = new QListWidgetItem(codec->toUnicode(arraySerial));
     }
     else
     {
-        item = new QListWidgetItem(arraySerial.toHex());
+        itemReceiver = new QListWidgetItem(arraySerial.toHex());
     }
-    //qDebug() << "list " << ui->listWidget_display->count();
-    ui->listWidget_display->verticalScrollBar()->setValue(ui->listWidget_display->count()+1);
-    //qDebug() << "bar " << ui->listWidget_display->verticalScrollBar()->value();
-    ui->listWidget_display->addItem(item);
+    qDebug() << "list " << ui->listWidget_display->count();
+    qDebug() << "bar " << ui->listWidget_display->verticalScrollBar()->maximum();
+    ui->listWidget_display->addItem(itemReceiver);
+
+    ui->listWidget_display->verticalScrollBar()
+            ->setMaximum(ui->listWidget_display->verticalScrollBar()->maximum()+1);
+    ui->listWidget_display->verticalScrollBar()
+            ->setValue(ui->listWidget_display->verticalScrollBar()->maximum());
 }
 
 void MainWindow::setCurrentRow(int row)
@@ -149,11 +155,43 @@ void MainWindow::on_pushButton_clear_dispaly_clicked()
 
 void MainWindow::on_pushButton_send_clicked()
 {
+    QListWidgetItem *itemSender;
+    //qDebug() << QByteArray().append(ui->textEdit_input->toPlainText()).toHex();
     if(serialTool->isOpen())
     {
-        serialTool->getCurrentOpenSerial()->write(QByteArray(ui->textEdit_input->toPlainText().toLatin1()));
-        qDebug() << ui->textEdit_input->toPlainText();
+        if(ui->checkBox_auto_newlineSender->isChecked())
+        {
+            serialTool->getCurrentOpenSerial()
+                    ->write(QByteArray((ui->textEdit_input->toPlainText()+"\n").toLatin1()));
+        }
+        else
+        {
+            serialTool->getCurrentOpenSerial()
+                    ->write(QByteArray(ui->textEdit_input->toPlainText().toLatin1()));
+        }
+
+        if(ui->checkBox_show_send->isChecked())
+        {
+            itemSender = new QListWidgetItem(ui->textEdit_input->toPlainText());
+            itemSender->setTextColor(QColor(241,90,122));
+            ui->listWidget_display->addItem(itemSender);
+        }
+
+        if(ui->checkBox_repeat->isChecked())
+        {
+            timerRepeat = new QTimer(this);
+            connect(timerRepeat,SIGNAL(timeout()),this,SLOT(repeatSend()));
+            //qDebug() << ui->spinBox_time->value();
+            timerRepeat->start(ui->spinBox_time->value());
+        }
     }
+}
+
+void MainWindow::repeatSend()
+{
+    serialTool->getCurrentOpenSerial()
+            ->write(ui->textEdit_input->toPlainText().toLatin1());
+    qDebug() << ui->textEdit_input->toPlainText();
 }
 
 void MainWindow::on_radioButton2_ASCII_clicked()

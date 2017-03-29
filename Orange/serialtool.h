@@ -9,6 +9,28 @@ class SerialTool : public QObject
     Q_OBJECT
 
 public:
+    //Serial Set
+    QString serialName;
+    QString serialBaud;
+    QString serialDataBit;
+    QString serialCheckBit;
+    QString serialStopBit;
+    QString serialFlowBit;
+    //Receive Set
+    QString displayForm;
+    bool receiveAutoNewlineFlag;
+    bool showSendContentFlag;
+    bool showInfoTimeFlag;
+    //Send Set
+    QString sendForm;
+    bool sendAutoNewlineFlag;
+    bool repeatSendFlag;
+    int repeatSendmS;
+    //Content
+    QString sendContent;
+    QString receiveContent;
+    //
+public:
     SerialTool();
     SerialTool(QObject *parent);
 
@@ -23,7 +45,7 @@ public slots:
 private:
     QSerialPort *serial_port;
     QSerialPortInfo *serial_port_info;
-
+    //Serial Set
     QString string_serialport;
     QString string_lastSerialport;
     QString string_serialinfo;

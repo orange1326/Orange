@@ -80,7 +80,7 @@ public:
     QLabel *label;
     QFrame *line_8;
     QFrame *line_6;
-    QCheckBox *checkBox_auto_newline;
+    QCheckBox *checkBox_auto_newlineSender;
     QSpinBox *spinBox_time;
     QFrame *line_10;
     QFrame *line_11;
@@ -99,7 +99,7 @@ public:
     QHBoxLayout *horizontalLayout_7;
     QRadioButton *radioButton2_ASCII;
     QRadioButton *radioButton2_HEX;
-    QCheckBox *checkBox2_auto_newline;
+    QCheckBox *checkBox_auto_newlineReceiver;
     QCheckBox *checkBox_show_send;
     QCheckBox *checkBox_show_time;
     QFrame *line_2;
@@ -193,8 +193,8 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(680, 480);
-        MainWindow->setMinimumSize(QSize(680, 450));
-        MainWindow->setMaximumSize(QSize(718, 480));
+        MainWindow->setMinimumSize(QSize(680, 480));
+        MainWindow->setMaximumSize(QSize(680, 480));
         action_S = new QAction(MainWindow);
         action_S->setObjectName(QStringLiteral("action_S"));
         action_A = new QAction(MainWindow);
@@ -229,6 +229,8 @@ public:
         listWidget_display->setGeometry(QRect(170, 21, 301, 311));
         listWidget_display->setAutoScroll(true);
         listWidget_display->setAutoScrollMargin(16);
+        listWidget_display->setDragEnabled(false);
+        listWidget_display->setProperty("isWrapping", QVariant(false));
         listWidget_display->setSortingEnabled(false);
         label_10 = new QLabel(centralWidget);
         label_10->setObjectName(QStringLiteral("label_10"));
@@ -379,9 +381,9 @@ public:
         line_6->setGeometry(QRect(6, 17, 6, 2));
         line_6->setFrameShape(QFrame::HLine);
         line_6->setFrameShadow(QFrame::Sunken);
-        checkBox_auto_newline = new QCheckBox(page);
-        checkBox_auto_newline->setObjectName(QStringLiteral("checkBox_auto_newline"));
-        checkBox_auto_newline->setGeometry(QRect(19, 375, 71, 16));
+        checkBox_auto_newlineSender = new QCheckBox(page);
+        checkBox_auto_newlineSender->setObjectName(QStringLiteral("checkBox_auto_newlineSender"));
+        checkBox_auto_newlineSender->setGeometry(QRect(19, 375, 71, 16));
         spinBox_time = new QSpinBox(page);
         spinBox_time->setObjectName(QStringLiteral("spinBox_time"));
         spinBox_time->setGeometry(QRect(86, 398, 70, 20));
@@ -470,16 +472,16 @@ public:
 
         verticalLayout_2->addLayout(horizontalLayout_7);
 
-        checkBox2_auto_newline = new QCheckBox(layoutWidget2);
-        checkBox2_auto_newline->setObjectName(QStringLiteral("checkBox2_auto_newline"));
-        checkBox2_auto_newline->setEnabled(true);
+        checkBox_auto_newlineReceiver = new QCheckBox(layoutWidget2);
+        checkBox_auto_newlineReceiver->setObjectName(QStringLiteral("checkBox_auto_newlineReceiver"));
+        checkBox_auto_newlineReceiver->setEnabled(true);
         QFont font;
         font.setStyleStrategy(QFont::PreferDefault);
-        checkBox2_auto_newline->setFont(font);
-        checkBox2_auto_newline->setCheckable(true);
-        checkBox2_auto_newline->setChecked(false);
+        checkBox_auto_newlineReceiver->setFont(font);
+        checkBox_auto_newlineReceiver->setCheckable(true);
+        checkBox_auto_newlineReceiver->setChecked(false);
 
-        verticalLayout_2->addWidget(checkBox2_auto_newline);
+        verticalLayout_2->addWidget(checkBox_auto_newlineReceiver);
 
         checkBox_show_send = new QCheckBox(layoutWidget2);
         checkBox_show_send->setObjectName(QStringLiteral("checkBox_show_send"));
@@ -999,14 +1001,14 @@ public:
          << QApplication::translate("MainWindow", "2", Q_NULLPTR)
         );
         label->setText(QApplication::translate("MainWindow", "\344\270\262\345\217\243\350\256\276\347\275\256", Q_NULLPTR));
-        checkBox_auto_newline->setText(QApplication::translate("MainWindow", "\350\207\252\345\212\250\346\215\242\350\241\214", Q_NULLPTR));
+        checkBox_auto_newlineSender->setText(QApplication::translate("MainWindow", "\350\207\252\345\212\250\346\215\242\350\241\214", Q_NULLPTR));
         spinBox_time->setSuffix(QApplication::translate("MainWindow", "ms", Q_NULLPTR));
         label_9->setText(QApplication::translate("MainWindow", "\345\217\221\351\200\201\350\256\276\347\275\256", Q_NULLPTR));
         radioButton_ASCII->setText(QApplication::translate("MainWindow", "ASCII", Q_NULLPTR));
         radioButton_HEX->setText(QApplication::translate("MainWindow", "HEX", Q_NULLPTR));
         radioButton2_ASCII->setText(QApplication::translate("MainWindow", "ASCII", Q_NULLPTR));
         radioButton2_HEX->setText(QApplication::translate("MainWindow", "HEX", Q_NULLPTR));
-        checkBox2_auto_newline->setText(QApplication::translate("MainWindow", "\350\207\252\345\212\250\346\215\242\350\241\214", Q_NULLPTR));
+        checkBox_auto_newlineReceiver->setText(QApplication::translate("MainWindow", "\350\207\252\345\212\250\346\215\242\350\241\214", Q_NULLPTR));
         checkBox_show_send->setText(QApplication::translate("MainWindow", "\346\230\276\347\244\272\345\217\221\351\200\201", Q_NULLPTR));
         checkBox_show_time->setText(QApplication::translate("MainWindow", "\346\230\276\347\244\272\346\227\266\351\227\264", Q_NULLPTR));
         label_8->setText(QApplication::translate("MainWindow", "\346\216\245\346\224\266\350\256\276\347\275\256", Q_NULLPTR));

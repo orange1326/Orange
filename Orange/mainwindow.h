@@ -29,6 +29,8 @@ private:
     SerialTool *serialTool;
     QTimer *timer;
     QTimer *timer2;
+    QTimer *timerRepeat;
+    QTextCodec *codec;
 
 private slots:
     void on_pushButton_open_clicked();
@@ -41,6 +43,7 @@ public slots:
     void setCurrentRow(int row);
     void showAboutDialog();
     void showSerialResult();
+    void repeatSend();
 };
 
 #endif // MAINWINDOW_H
