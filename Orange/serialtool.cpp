@@ -11,15 +11,11 @@ SerialTool::SerialTool(QObject *parent) : QObject(parent)
     serial_port = new QSerialPort();
 }
 
-void SerialTool::openSerialConfig(QVector<QString> *para)
+void SerialTool::openSerialConfig()
 {
-    serial_port->setPortName(para->at(0));
-    for(int i = 0;i<5;i++)
-    {
-        //qDebug() << para->at(i);
-    }
+    serial_port->setPortName(serialName);
     //set baud
-    switch (para->at(1).toLong()) {
+    switch (serialBaud.toLong()) {
     case 1200:
         serial_port->setBaudRate(QSerialPort::Baud1200);
         break;
@@ -49,7 +45,7 @@ void SerialTool::openSerialConfig(QVector<QString> *para)
         break;
     }
     //set databit
-    switch (para->at(2).toInt()) {
+    switch (serialDataBit.toInt()) {
     case 5:
         serial_port->setDataBits(QSerialPort::Data5);
         break;
@@ -88,7 +84,7 @@ void SerialTool::openSerialConfig(QVector<QString> *para)
         break;
     }
     //set stopbit
-    switch (para->at(4).toInt()) {
+    switch (serialStopBit.toInt()) {
     case 1:
         serial_port->setStopBits(QSerialPort::OneStop);
         break;
@@ -107,11 +103,11 @@ void SerialTool::openSerialConfig(QVector<QString> *para)
     serial_port->setReadBufferSize(1024);
 }
 
-bool SerialTool::openSerial(QVector<QString> *para)
+bool SerialTool::openSerial()
 {
     if(serial_port->isOpen())
         return true;
-    openSerialConfig(para);
+    openSerialConfig();
 
     return serial_port->open(QSerialPort::ReadWrite);
 }

@@ -7,6 +7,7 @@
 #include <QScrollBar>
 #include <QTextCodec>
 
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -21,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     timer2 = new QTimer(this);
     codec = QTextCodec::codecForName("GB18030");
 
+    uiDataUpdata();
     menuBarConfig();
     toolBarConfig();
     serialConfig();
@@ -56,6 +58,27 @@ void MainWindow::serialConfig()
     connect(serialTool->getCurrentOpenSerial(),SIGNAL(readyRead()),this,SLOT(display()));
 }
 
+void MainWindow::uiDataUpdata()
+{
+    //Serial Set parameter
+    serialTool->serialName = ui->comboBox_serial->currentText();
+    serialTool->serialBaud = ui->comboBox_baudRate->currentText();
+    serialTool->serialDataBit = ui->comboBox_dataBit->currentText();
+    serialTool->serialCheckBit = ui->comboBox_checkBit->currentText();
+    serialTool->serialStopBit = ui->comboBox_stopBit->currentText();
+    serialTool->serialFlowBit = ui->comboBox_flowBit->currentText();
+    //Receive Set parameter
+    serialTool->displayForm = ui->radioButtonR_ASCII->isChecked();
+    serialTool->receiveAutoNewlineFlag = ui->checkBox_auto_newlineReceiver->isChecked();
+    serialTool->showSendContentFlag = ui->checkBox_show_send->isChecked();
+    serialTool->showInfoTimeFlag = ui->checkBox_show_time->isChecked();
+    //Send Set parameter
+    serialTool->sendForm = ui->radioButtonS_ASCII->isChecked();
+    serialTool->sendAutoNewlineFlag = ui->checkBox_auto_newlineSender->isChecked();
+    serialTool->repeatSendFlag = ui->checkBox_repeat->isChecked();
+    serialTool->repeatSendmS = ui->spinBox_time->value();
+}
+
 void MainWindow::on_pushButton_open_clicked()
 {
     if(ui->pushButton_open->text() == "打开")
@@ -64,14 +87,7 @@ void MainWindow::on_pushButton_open_clicked()
         {
             return;
         }
-        QVector<QString> *parameter = new QVector<QString>;
-        parameter->append(ui->comboBox_serial->currentText());
-        parameter->append(ui->comboBox_baudRate->currentText());
-        parameter->append(ui->comboBox_dataBit->currentText());
-        parameter->append(ui->comboBox_checkBit->currentText());
-        parameter->append(ui->comboBox_stopBit->currentText());
-        serialTool->openSerial(parameter);
-        qDebug() << "open serial";
+        serialTool->openSerial();
     }
     else
     if(ui->pushButton_open->text() == "关闭")
@@ -85,7 +101,7 @@ void MainWindow::display()
 {
     QListWidgetItem *itemReceiver;
     QByteArray arraySerial = serialTool->getCurrentOpenSerial()->readAll();
-    if(ui->radioButton2_ASCII->isChecked())
+    if(ui->radioButtonR_ASCII->isChecked())
     {
         itemReceiver = new QListWidgetItem(codec->toUnicode(arraySerial));
     }
@@ -121,8 +137,6 @@ void MainWindow::showAboutDialog()
 void MainWindow::showSerialResult()
 {
     int serialCount = serialTool->getSerialName().size();
-    //qDebug() << serialCount;
-    //qDebug() << serialTool->isOpen();
     if(serialTool->isOpen())
     {
         ui->pushButton_open->setText("关闭");

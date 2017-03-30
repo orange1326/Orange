@@ -34,7 +34,7 @@ public:
     SerialTool();
     SerialTool(QObject *parent);
 
-    bool openSerial(QVector<QString> *para);
+    bool openSerial();
     void closeSerial();
     bool clearSerial();
     QVector<QString> getSerialName();
@@ -52,7 +52,7 @@ private:
 
     QVector<QString> serial_name_vector;
     QByteArray array;
-    void openSerialConfig(QVector<QString> *para);
+    void openSerialConfig();
 };
 
 #endif // SERIALTOOL_H

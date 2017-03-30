@@ -74,7 +74,7 @@ public:
     QComboBox *comboBox_stopBit;
     QHBoxLayout *horizontalLayout_6;
     QLabel *label_7;
-    QComboBox *comboBox_6;
+    QComboBox *comboBox_flowBit;
     QFrame *line_4;
     QFrame *line_5;
     QLabel *label;
@@ -90,15 +90,15 @@ public:
     QFrame *line_16;
     QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_8;
-    QRadioButton *radioButton_ASCII;
-    QRadioButton *radioButton_HEX;
+    QRadioButton *radioButtonS_ASCII;
+    QRadioButton *radioButtonS_HEX;
     QFrame *line_9;
     QFrame *line_3;
     QWidget *layoutWidget2;
     QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout_7;
-    QRadioButton *radioButton2_ASCII;
-    QRadioButton *radioButton2_HEX;
+    QRadioButton *radioButtonR_ASCII;
+    QRadioButton *radioButtonR_HEX;
     QCheckBox *checkBox_auto_newlineReceiver;
     QCheckBox *checkBox_show_send;
     QCheckBox *checkBox_show_time;
@@ -349,11 +349,11 @@ public:
 
         horizontalLayout_6->addWidget(label_7);
 
-        comboBox_6 = new QComboBox(layoutWidget);
-        comboBox_6->setObjectName(QStringLiteral("comboBox_6"));
-        comboBox_6->setMinimumSize(QSize(80, 0));
+        comboBox_flowBit = new QComboBox(layoutWidget);
+        comboBox_flowBit->setObjectName(QStringLiteral("comboBox_flowBit"));
+        comboBox_flowBit->setMinimumSize(QSize(80, 0));
 
-        horizontalLayout_6->addWidget(comboBox_6);
+        horizontalLayout_6->addWidget(comboBox_flowBit);
 
 
         verticalLayout->addLayout(horizontalLayout_6);
@@ -425,16 +425,16 @@ public:
         horizontalLayout_8->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
         horizontalLayout_8->setContentsMargins(0, 0, 0, 0);
-        radioButton_ASCII = new QRadioButton(layoutWidget1);
-        radioButton_ASCII->setObjectName(QStringLiteral("radioButton_ASCII"));
-        radioButton_ASCII->setChecked(true);
+        radioButtonS_ASCII = new QRadioButton(layoutWidget1);
+        radioButtonS_ASCII->setObjectName(QStringLiteral("radioButtonS_ASCII"));
+        radioButtonS_ASCII->setChecked(true);
 
-        horizontalLayout_8->addWidget(radioButton_ASCII);
+        horizontalLayout_8->addWidget(radioButtonS_ASCII);
 
-        radioButton_HEX = new QRadioButton(layoutWidget1);
-        radioButton_HEX->setObjectName(QStringLiteral("radioButton_HEX"));
+        radioButtonS_HEX = new QRadioButton(layoutWidget1);
+        radioButtonS_HEX->setObjectName(QStringLiteral("radioButtonS_HEX"));
 
-        horizontalLayout_8->addWidget(radioButton_HEX);
+        horizontalLayout_8->addWidget(radioButtonS_HEX);
 
         line_9 = new QFrame(page);
         line_9->setObjectName(QStringLiteral("line_9"));
@@ -457,17 +457,17 @@ public:
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setSpacing(6);
         horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
-        radioButton2_ASCII = new QRadioButton(layoutWidget2);
-        radioButton2_ASCII->setObjectName(QStringLiteral("radioButton2_ASCII"));
-        radioButton2_ASCII->setFocusPolicy(Qt::ClickFocus);
-        radioButton2_ASCII->setChecked(true);
+        radioButtonR_ASCII = new QRadioButton(layoutWidget2);
+        radioButtonR_ASCII->setObjectName(QStringLiteral("radioButtonR_ASCII"));
+        radioButtonR_ASCII->setFocusPolicy(Qt::ClickFocus);
+        radioButtonR_ASCII->setChecked(true);
 
-        horizontalLayout_7->addWidget(radioButton2_ASCII);
+        horizontalLayout_7->addWidget(radioButtonR_ASCII);
 
-        radioButton2_HEX = new QRadioButton(layoutWidget2);
-        radioButton2_HEX->setObjectName(QStringLiteral("radioButton2_HEX"));
+        radioButtonR_HEX = new QRadioButton(layoutWidget2);
+        radioButtonR_HEX->setObjectName(QStringLiteral("radioButtonR_HEX"));
 
-        horizontalLayout_7->addWidget(radioButton2_HEX);
+        horizontalLayout_7->addWidget(radioButtonR_HEX);
 
 
         verticalLayout_2->addLayout(horizontalLayout_7);
@@ -994,8 +994,8 @@ public:
          << QApplication::translate("MainWindow", "2", Q_NULLPTR)
         );
         label_7->setText(QApplication::translate("MainWindow", "\346\265\201  \346\216\247", Q_NULLPTR));
-        comboBox_6->clear();
-        comboBox_6->insertItems(0, QStringList()
+        comboBox_flowBit->clear();
+        comboBox_flowBit->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "1", Q_NULLPTR)
          << QApplication::translate("MainWindow", "1.5", Q_NULLPTR)
          << QApplication::translate("MainWindow", "2", Q_NULLPTR)
@@ -1004,10 +1004,10 @@ public:
         checkBox_auto_newlineSender->setText(QApplication::translate("MainWindow", "\350\207\252\345\212\250\346\215\242\350\241\214", Q_NULLPTR));
         spinBox_time->setSuffix(QApplication::translate("MainWindow", "ms", Q_NULLPTR));
         label_9->setText(QApplication::translate("MainWindow", "\345\217\221\351\200\201\350\256\276\347\275\256", Q_NULLPTR));
-        radioButton_ASCII->setText(QApplication::translate("MainWindow", "ASCII", Q_NULLPTR));
-        radioButton_HEX->setText(QApplication::translate("MainWindow", "HEX", Q_NULLPTR));
-        radioButton2_ASCII->setText(QApplication::translate("MainWindow", "ASCII", Q_NULLPTR));
-        radioButton2_HEX->setText(QApplication::translate("MainWindow", "HEX", Q_NULLPTR));
+        radioButtonS_ASCII->setText(QApplication::translate("MainWindow", "ASCII", Q_NULLPTR));
+        radioButtonS_HEX->setText(QApplication::translate("MainWindow", "HEX", Q_NULLPTR));
+        radioButtonR_ASCII->setText(QApplication::translate("MainWindow", "ASCII", Q_NULLPTR));
+        radioButtonR_HEX->setText(QApplication::translate("MainWindow", "HEX", Q_NULLPTR));
         checkBox_auto_newlineReceiver->setText(QApplication::translate("MainWindow", "\350\207\252\345\212\250\346\215\242\350\241\214", Q_NULLPTR));
         checkBox_show_send->setText(QApplication::translate("MainWindow", "\346\230\276\347\244\272\345\217\221\351\200\201", Q_NULLPTR));
         checkBox_show_time->setText(QApplication::translate("MainWindow", "\346\230\276\347\244\272\346\227\266\351\227\264", Q_NULLPTR));

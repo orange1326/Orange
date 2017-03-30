@@ -383,7 +383,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="comboBox_6">
+          <widget class="QComboBox" name="comboBox_flowBit">
            <property name="minimumSize">
             <size>
              <width>80</width>
@@ -597,7 +597,7 @@
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_8">
        <item>
-        <widget class="QRadioButton" name="radioButton_ASCII">
+        <widget class="QRadioButton" name="radioButtonS_ASCII">
          <property name="text">
           <string>ASCII</string>
          </property>
@@ -607,7 +607,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="radioButton_HEX">
+        <widget class="QRadioButton" name="radioButtonS_HEX">
          <property name="text">
           <string>HEX</string>
          </property>
@@ -654,7 +654,7 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_7">
          <item>
-          <widget class="QRadioButton" name="radioButton2_ASCII">
+          <widget class="QRadioButton" name="radioButtonR_ASCII">
            <property name="focusPolicy">
             <enum>Qt::ClickFocus</enum>
            </property>
@@ -667,7 +667,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QRadioButton" name="radioButton2_HEX">
+          <widget class="QRadioButton" name="radioButtonR_HEX">
            <property name="text">
             <string>HEX</string>
            </property>

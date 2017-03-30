@@ -38,6 +38,8 @@ private slots:
     void on_pushButton_send_clicked();
     void on_radioButton2_ASCII_clicked();
 
+    void uiDataUpdata();
+
 public slots:
     void display();
     void setCurrentRow(int row);
