@@ -26,10 +26,6 @@ public:
     bool sendAutoNewlineFlag;
     bool repeatSendFlag;
     int repeatSendmS;
-    //Content
-    QString sendContent;
-    QString receiveContent;
-    //
 public:
     SerialTool();
     SerialTool(QObject *parent);
@@ -39,19 +35,17 @@ public:
     bool clearSerial();
     QVector<QString> getSerialName();
     QSerialPort *getCurrentOpenSerial();
+    bool checkPullSerial(QString serialName);
     bool isOpen();
 public slots:
     void searchSerial();
 private:
-    QSerialPort *serial_port;
-    QSerialPortInfo *serial_port_info;
-    //Serial Set
-    QString string_serialport;
-    QString string_lastSerialport;
-    QString string_serialinfo;
-
-    QVector<QString> serial_name_vector;
+    QSerialPort *serialPort;
+    QSerialPortInfo *serialPortInfo;
+    QList<QSerialPortInfo> serialPortLists;
+    QVector<QString> serialNameVector;
     QByteArray array;
+
     void openSerialConfig();
 };
 

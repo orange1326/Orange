@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[13];
-    char stringdata0[215];
+    QByteArrayData data[10];
+    char stringdata0[174];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,23 +36,18 @@ QT_MOC_LITERAL(1, 11, 26), // "on_pushButton_open_clicked"
 QT_MOC_LITERAL(2, 38, 0), // ""
 QT_MOC_LITERAL(3, 39, 35), // "on_pushButton_clear_dispaly_c..."
 QT_MOC_LITERAL(4, 75, 26), // "on_pushButton_send_clicked"
-QT_MOC_LITERAL(5, 102, 29), // "on_radioButton2_ASCII_clicked"
-QT_MOC_LITERAL(6, 132, 12), // "uiDataUpdata"
-QT_MOC_LITERAL(7, 145, 7), // "display"
-QT_MOC_LITERAL(8, 153, 13), // "setCurrentRow"
-QT_MOC_LITERAL(9, 167, 3), // "row"
-QT_MOC_LITERAL(10, 171, 15), // "showAboutDialog"
-QT_MOC_LITERAL(11, 187, 16), // "showSerialResult"
-QT_MOC_LITERAL(12, 204, 10) // "repeatSend"
+QT_MOC_LITERAL(5, 102, 7), // "display"
+QT_MOC_LITERAL(6, 110, 19), // "searchAndShowResult"
+QT_MOC_LITERAL(7, 130, 15), // "showAboutDialog"
+QT_MOC_LITERAL(8, 146, 16), // "showSerialResult"
+QT_MOC_LITERAL(9, 163, 10) // "repeatSend"
 
     },
     "MainWindow\0on_pushButton_open_clicked\0"
     "\0on_pushButton_clear_dispaly_clicked\0"
-    "on_pushButton_send_clicked\0"
-    "on_radioButton2_ASCII_clicked\0"
-    "uiDataUpdata\0display\0setCurrentRow\0"
-    "row\0showAboutDialog\0showSerialResult\0"
-    "repeatSend"
+    "on_pushButton_send_clicked\0display\0"
+    "searchAndShowResult\0showAboutDialog\0"
+    "showSerialResult\0repeatSend"
 };
 #undef QT_MOC_LITERAL
 
@@ -62,7 +57,7 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   14, // methods
+       8,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -70,16 +65,14 @@ static const uint qt_meta_data_MainWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   64,    2, 0x08 /* Private */,
-       3,    0,   65,    2, 0x08 /* Private */,
-       4,    0,   66,    2, 0x08 /* Private */,
-       5,    0,   67,    2, 0x08 /* Private */,
-       6,    0,   68,    2, 0x08 /* Private */,
-       7,    0,   69,    2, 0x0a /* Public */,
-       8,    1,   70,    2, 0x0a /* Public */,
-      10,    0,   73,    2, 0x0a /* Public */,
-      11,    0,   74,    2, 0x0a /* Public */,
-      12,    0,   75,    2, 0x0a /* Public */,
+       1,    0,   54,    2, 0x08 /* Private */,
+       3,    0,   55,    2, 0x08 /* Private */,
+       4,    0,   56,    2, 0x08 /* Private */,
+       5,    0,   57,    2, 0x08 /* Private */,
+       6,    0,   58,    2, 0x08 /* Private */,
+       7,    0,   59,    2, 0x08 /* Private */,
+       8,    0,   60,    2, 0x08 /* Private */,
+       9,    0,   61,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -87,8 +80,6 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    9,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -105,16 +96,15 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 0: _t->on_pushButton_open_clicked(); break;
         case 1: _t->on_pushButton_clear_dispaly_clicked(); break;
         case 2: _t->on_pushButton_send_clicked(); break;
-        case 3: _t->on_radioButton2_ASCII_clicked(); break;
-        case 4: _t->uiDataUpdata(); break;
-        case 5: _t->display(); break;
-        case 6: _t->setCurrentRow((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 7: _t->showAboutDialog(); break;
-        case 8: _t->showSerialResult(); break;
-        case 9: _t->repeatSend(); break;
+        case 3: _t->display(); break;
+        case 4: _t->searchAndShowResult(); break;
+        case 5: _t->showAboutDialog(); break;
+        case 6: _t->showSerialResult(); break;
+        case 7: _t->repeatSend(); break;
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
 const QMetaObject MainWindow::staticMetaObject = {
@@ -142,13 +132,13 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 10)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 8;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 10)
+        if (_id < 8)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 10;
+        _id -= 8;
     }
     return _id;
 }
