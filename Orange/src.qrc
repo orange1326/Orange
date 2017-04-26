@@ -2,5 +2,11 @@
     <qresource prefix="/">
         <file>image/orange.png</file>
         <file>image/orange_noColor.png</file>
+        <file>image/exit.png</file>
+        <file>image/serial.png</file>
+        <file>image/TCP.png</file>
+        <file>image/about.png</file>
+        <file>image/guide.png</file>
+        <file>image/set.png</file>
     </qresource>
 </RCC>

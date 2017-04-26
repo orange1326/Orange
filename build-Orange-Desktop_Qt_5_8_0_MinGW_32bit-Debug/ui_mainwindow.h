@@ -43,6 +43,7 @@ public:
     QAction *action_U;
     QAction *action_S_2;
     QAction *actionTCP_IP_T;
+    QAction *action_E;
     QWidget *centralWidget;
     QTextEdit *textEdit_input;
     QPushButton *pushButton_send;
@@ -121,64 +122,66 @@ public:
     QHBoxLayout *horizontalLayout_35;
     QLabel *label_19;
     QComboBox *comboBox_15;
-    QHBoxLayout *horizontalLayout_36;
-    QLabel *label_20;
-    QComboBox *comboBox_16;
-    QHBoxLayout *horizontalLayout_37;
-    QLabel *label_21;
-    QComboBox *comboBox_17;
-    QHBoxLayout *horizontalLayout_38;
-    QLabel *label_22;
-    QComboBox *comboBox_18;
     QFrame *line_20;
     QLabel *label_23;
-    QLabel *label_24;
+    QFrame *line_21;
     QWidget *layoutWidget3;
     QVBoxLayout *verticalLayout_3;
     QHBoxLayout *horizontalLayout_9;
-    QCheckBox *checkBox_custom1;
     QLineEdit *lineEdit_custom1_name;
     QLineEdit *lineEdit_custom1_key;
+    QCheckBox *checkBox_custom1;
+    QPushButton *pushButton_custom1;
     QHBoxLayout *horizontalLayout_10;
-    QCheckBox *checkBox_custom2;
     QLineEdit *lineEdit_custom2_name;
     QLineEdit *lineEdit_custom2_key;
+    QCheckBox *checkBox_custom2;
+    QPushButton *pushButton_custom2;
     QHBoxLayout *horizontalLayout_26;
-    QCheckBox *checkBox_custom3;
     QLineEdit *lineEdit_custom3_name;
     QLineEdit *lineEdit_custom3_key;
+    QCheckBox *checkBox_custom3;
+    QPushButton *pushButton_custom3;
     QHBoxLayout *horizontalLayout_11;
-    QCheckBox *checkBox_custom4;
     QLineEdit *lineEdit_custom4_name;
     QLineEdit *lineEdit_custom4_key;
+    QCheckBox *checkBox_custom4;
+    QPushButton *pushButton_custom4;
     QHBoxLayout *horizontalLayout_25;
-    QCheckBox *checkBox_custom5;
     QLineEdit *lineEdit_custom5_name;
     QLineEdit *lineEdit_custom5_key;
+    QCheckBox *checkBox_custom5;
+    QPushButton *pushButton_custom5;
     QHBoxLayout *horizontalLayout_12;
-    QCheckBox *checkBox_custom6;
     QLineEdit *lineEdit_custom6_name;
     QLineEdit *lineEdit_custom6_key;
+    QCheckBox *checkBox_custom6;
+    QPushButton *pushButton_custom6;
     QHBoxLayout *horizontalLayout_24;
+    QLineEdit *lineEdit_custom7_name;
+    QLineEdit *lineEdit_custom7_key;
     QCheckBox *checkBox_custom7;
+    QPushButton *pushButton_custom7;
+    QHBoxLayout *horizontalLayout_13;
     QLineEdit *lineEdit_custom8_name;
     QLineEdit *lineEdit_custom8_key;
-    QHBoxLayout *horizontalLayout_13;
-    QCheckBox *checkBox_custom9;
+    QCheckBox *checkBox_custom8;
+    QPushButton *pushButton_custom8;
+    QHBoxLayout *horizontalLayout_14;
     QLineEdit *lineEdit_custom9_name;
     QLineEdit *lineEdit_custom9_key;
-    QHBoxLayout *horizontalLayout_14;
-    QCheckBox *checkBox_custom10;
+    QCheckBox *checkBox_custom9;
+    QPushButton *pushButton_custom9;
+    QHBoxLayout *horizontalLayout_15;
     QLineEdit *lineEdit_custom10_name;
     QLineEdit *lineEdit_custom10_key;
-    QHBoxLayout *horizontalLayout_15;
-    QCheckBox *checkBox_custom11;
+    QCheckBox *checkBox_custom10;
+    QPushButton *pushButton_custom10;
+    QHBoxLayout *horizontalLayout_16;
     QLineEdit *lineEdit_custom11_name;
     QLineEdit *lineEdit_custom11_key;
-    QHBoxLayout *horizontalLayout_16;
-    QCheckBox *checkBox_custom12;
-    QLineEdit *lineEdit_custom12_name;
-    QLineEdit *lineEdit_custom12_key;
+    QCheckBox *checkBox_custom11;
+    QPushButton *pushButton_custom11;
     QLabel *label_pic;
     QMenuBar *menuBar;
     QMenu *menu_F;
@@ -197,14 +200,34 @@ public:
         MainWindow->setMaximumSize(QSize(680, 480));
         action_S = new QAction(MainWindow);
         action_S->setObjectName(QStringLiteral("action_S"));
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/image/set.png"), QSize(), QIcon::Normal, QIcon::Off);
+        action_S->setIcon(icon);
         action_A = new QAction(MainWindow);
         action_A->setObjectName(QStringLiteral("action_A"));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/image/about.png"), QSize(), QIcon::Normal, QIcon::Off);
+        action_A->setIcon(icon1);
         action_U = new QAction(MainWindow);
         action_U->setObjectName(QStringLiteral("action_U"));
+        QIcon icon2;
+        icon2.addFile(QStringLiteral(":/image/guide.png"), QSize(), QIcon::Normal, QIcon::Off);
+        action_U->setIcon(icon2);
         action_S_2 = new QAction(MainWindow);
         action_S_2->setObjectName(QStringLiteral("action_S_2"));
+        QIcon icon3;
+        icon3.addFile(QStringLiteral(":/image/serial.png"), QSize(), QIcon::Normal, QIcon::Off);
+        action_S_2->setIcon(icon3);
         actionTCP_IP_T = new QAction(MainWindow);
         actionTCP_IP_T->setObjectName(QStringLiteral("actionTCP_IP_T"));
+        QIcon icon4;
+        icon4.addFile(QStringLiteral(":/image/TCP.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionTCP_IP_T->setIcon(icon4);
+        action_E = new QAction(MainWindow);
+        action_E->setObjectName(QStringLiteral("action_E"));
+        QIcon icon5;
+        icon5.addFile(QStringLiteral(":/image/exit.png"), QSize(), QIcon::Normal, QIcon::Off);
+        action_E->setIcon(icon5);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         textEdit_input = new QTextEdit(centralWidget);
@@ -516,22 +539,22 @@ public:
         page_2->setObjectName(QStringLiteral("page_2"));
         line_17 = new QFrame(page_2);
         line_17->setObjectName(QStringLiteral("line_17"));
-        line_17->setGeometry(QRect(10, 12, 2, 185));
+        line_17->setGeometry(QRect(6, 17, 2, 130));
         line_17->setFrameShape(QFrame::VLine);
         line_17->setFrameShadow(QFrame::Sunken);
         line_18 = new QFrame(page_2);
         line_18->setObjectName(QStringLiteral("line_18"));
-        line_18->setGeometry(QRect(70, 12, 89, 3));
+        line_18->setGeometry(QRect(52, 17, 100, 3));
         line_18->setFrameShape(QFrame::HLine);
         line_18->setFrameShadow(QFrame::Sunken);
         line_19 = new QFrame(page_2);
         line_19->setObjectName(QStringLiteral("line_19"));
-        line_19->setGeometry(QRect(160, 12, 3, 185));
+        line_19->setGeometry(QRect(160, 12, 3, 130));
         line_19->setFrameShape(QFrame::VLine);
         line_19->setFrameShadow(QFrame::Sunken);
         layoutWidget_13 = new QWidget(page_2);
         layoutWidget_13->setObjectName(QStringLiteral("layoutWidget_13"));
-        layoutWidget_13->setGeometry(QRect(23, 26, 126, 164));
+        layoutWidget_13->setGeometry(QRect(20, 30, 131, 121));
         verticalLayout_5 = new QVBoxLayout(layoutWidget_13);
         verticalLayout_5->setSpacing(6);
         verticalLayout_5->setContentsMargins(11, 11, 11, 11);
@@ -562,14 +585,17 @@ public:
 
         horizontalLayout_34->addWidget(label_18);
 
+
+        verticalLayout_5->addLayout(horizontalLayout_34);
+
         comboBox_14 = new QComboBox(layoutWidget_13);
         comboBox_14->setObjectName(QStringLiteral("comboBox_14"));
         comboBox_14->setMinimumSize(QSize(80, 0));
+        comboBox_14->setAcceptDrops(false);
+        comboBox_14->setAutoFillBackground(false);
+        comboBox_14->setEditable(true);
 
-        horizontalLayout_34->addWidget(comboBox_14);
-
-
-        verticalLayout_5->addLayout(horizontalLayout_34);
+        verticalLayout_5->addWidget(comboBox_14);
 
         horizontalLayout_35 = new QHBoxLayout();
         horizontalLayout_35->setSpacing(6);
@@ -579,81 +605,37 @@ public:
 
         horizontalLayout_35->addWidget(label_19);
 
-        comboBox_15 = new QComboBox(layoutWidget_13);
-        comboBox_15->setObjectName(QStringLiteral("comboBox_15"));
-        comboBox_15->setMinimumSize(QSize(80, 0));
-
-        horizontalLayout_35->addWidget(comboBox_15);
-
 
         verticalLayout_5->addLayout(horizontalLayout_35);
 
-        horizontalLayout_36 = new QHBoxLayout();
-        horizontalLayout_36->setSpacing(6);
-        horizontalLayout_36->setObjectName(QStringLiteral("horizontalLayout_36"));
-        label_20 = new QLabel(layoutWidget_13);
-        label_20->setObjectName(QStringLiteral("label_20"));
+        comboBox_15 = new QComboBox(layoutWidget_13);
+        comboBox_15->setObjectName(QStringLiteral("comboBox_15"));
+        comboBox_15->setMinimumSize(QSize(80, 0));
+        comboBox_15->setEditable(true);
 
-        horizontalLayout_36->addWidget(label_20);
-
-        comboBox_16 = new QComboBox(layoutWidget_13);
-        comboBox_16->setObjectName(QStringLiteral("comboBox_16"));
-        comboBox_16->setMinimumSize(QSize(80, 0));
-
-        horizontalLayout_36->addWidget(comboBox_16);
-
-
-        verticalLayout_5->addLayout(horizontalLayout_36);
-
-        horizontalLayout_37 = new QHBoxLayout();
-        horizontalLayout_37->setSpacing(6);
-        horizontalLayout_37->setObjectName(QStringLiteral("horizontalLayout_37"));
-        label_21 = new QLabel(layoutWidget_13);
-        label_21->setObjectName(QStringLiteral("label_21"));
-
-        horizontalLayout_37->addWidget(label_21);
-
-        comboBox_17 = new QComboBox(layoutWidget_13);
-        comboBox_17->setObjectName(QStringLiteral("comboBox_17"));
-        comboBox_17->setMinimumSize(QSize(80, 0));
-
-        horizontalLayout_37->addWidget(comboBox_17);
-
-
-        verticalLayout_5->addLayout(horizontalLayout_37);
-
-        horizontalLayout_38 = new QHBoxLayout();
-        horizontalLayout_38->setSpacing(6);
-        horizontalLayout_38->setObjectName(QStringLiteral("horizontalLayout_38"));
-        label_22 = new QLabel(layoutWidget_13);
-        label_22->setObjectName(QStringLiteral("label_22"));
-
-        horizontalLayout_38->addWidget(label_22);
-
-        comboBox_18 = new QComboBox(layoutWidget_13);
-        comboBox_18->setObjectName(QStringLiteral("comboBox_18"));
-        comboBox_18->setMinimumSize(QSize(80, 0));
-
-        horizontalLayout_38->addWidget(comboBox_18);
-
-
-        verticalLayout_5->addLayout(horizontalLayout_38);
+        verticalLayout_5->addWidget(comboBox_15);
 
         line_20 = new QFrame(page_2);
         line_20->setObjectName(QStringLiteral("line_20"));
-        line_20->setGeometry(QRect(10, 190, 150, 16));
+        line_20->setGeometry(QRect(10, 150, 150, 16));
         line_20->setFrameShape(QFrame::HLine);
         line_20->setFrameShadow(QFrame::Sunken);
         label_23 = new QLabel(page_2);
         label_23->setObjectName(QStringLiteral("label_23"));
-        label_23->setGeometry(QRect(20, 0, 51, 20));
+        label_23->setGeometry(QRect(16, 8, 41, 20));
+        QFont font1;
+        font1.setFamily(QStringLiteral("Arial Narrow"));
+        font1.setPointSize(9);
+        label_23->setFont(font1);
+        line_21 = new QFrame(page_2);
+        line_21->setObjectName(QStringLiteral("line_21"));
+        line_21->setGeometry(QRect(6, 17, 6, 2));
+        line_21->setFrameShape(QFrame::HLine);
+        line_21->setFrameShadow(QFrame::Sunken);
         stackedWidget->addWidget(page_2);
-        label_24 = new QLabel(centralWidget);
-        label_24->setObjectName(QStringLiteral("label_24"));
-        label_24->setGeometry(QRect(160, 450, 54, 12));
         layoutWidget3 = new QWidget(centralWidget);
         layoutWidget3->setObjectName(QStringLiteral("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(480, 30, 191, 304));
+        layoutWidget3->setGeometry(QRect(480, 30, 191, 311));
         verticalLayout_3 = new QVBoxLayout(layoutWidget3);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
@@ -662,11 +644,6 @@ public:
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setSpacing(6);
         horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
-        checkBox_custom1 = new QCheckBox(layoutWidget3);
-        checkBox_custom1->setObjectName(QStringLiteral("checkBox_custom1"));
-
-        horizontalLayout_9->addWidget(checkBox_custom1);
-
         lineEdit_custom1_name = new QLineEdit(layoutWidget3);
         lineEdit_custom1_name->setObjectName(QStringLiteral("lineEdit_custom1_name"));
         lineEdit_custom1_name->setMaximumSize(QSize(40, 20));
@@ -678,17 +655,23 @@ public:
 
         horizontalLayout_9->addWidget(lineEdit_custom1_key);
 
+        checkBox_custom1 = new QCheckBox(layoutWidget3);
+        checkBox_custom1->setObjectName(QStringLiteral("checkBox_custom1"));
+
+        horizontalLayout_9->addWidget(checkBox_custom1);
+
+        pushButton_custom1 = new QPushButton(layoutWidget3);
+        pushButton_custom1->setObjectName(QStringLiteral("pushButton_custom1"));
+        pushButton_custom1->setMaximumSize(QSize(30, 20));
+
+        horizontalLayout_9->addWidget(pushButton_custom1);
+
 
         verticalLayout_3->addLayout(horizontalLayout_9);
 
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setSpacing(6);
         horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
-        checkBox_custom2 = new QCheckBox(layoutWidget3);
-        checkBox_custom2->setObjectName(QStringLiteral("checkBox_custom2"));
-
-        horizontalLayout_10->addWidget(checkBox_custom2);
-
         lineEdit_custom2_name = new QLineEdit(layoutWidget3);
         lineEdit_custom2_name->setObjectName(QStringLiteral("lineEdit_custom2_name"));
         lineEdit_custom2_name->setMaximumSize(QSize(40, 20));
@@ -700,17 +683,23 @@ public:
 
         horizontalLayout_10->addWidget(lineEdit_custom2_key);
 
+        checkBox_custom2 = new QCheckBox(layoutWidget3);
+        checkBox_custom2->setObjectName(QStringLiteral("checkBox_custom2"));
+
+        horizontalLayout_10->addWidget(checkBox_custom2);
+
+        pushButton_custom2 = new QPushButton(layoutWidget3);
+        pushButton_custom2->setObjectName(QStringLiteral("pushButton_custom2"));
+        pushButton_custom2->setMaximumSize(QSize(30, 20));
+
+        horizontalLayout_10->addWidget(pushButton_custom2);
+
 
         verticalLayout_3->addLayout(horizontalLayout_10);
 
         horizontalLayout_26 = new QHBoxLayout();
         horizontalLayout_26->setSpacing(6);
         horizontalLayout_26->setObjectName(QStringLiteral("horizontalLayout_26"));
-        checkBox_custom3 = new QCheckBox(layoutWidget3);
-        checkBox_custom3->setObjectName(QStringLiteral("checkBox_custom3"));
-
-        horizontalLayout_26->addWidget(checkBox_custom3);
-
         lineEdit_custom3_name = new QLineEdit(layoutWidget3);
         lineEdit_custom3_name->setObjectName(QStringLiteral("lineEdit_custom3_name"));
         lineEdit_custom3_name->setMaximumSize(QSize(40, 20));
@@ -722,17 +711,23 @@ public:
 
         horizontalLayout_26->addWidget(lineEdit_custom3_key);
 
+        checkBox_custom3 = new QCheckBox(layoutWidget3);
+        checkBox_custom3->setObjectName(QStringLiteral("checkBox_custom3"));
+
+        horizontalLayout_26->addWidget(checkBox_custom3);
+
+        pushButton_custom3 = new QPushButton(layoutWidget3);
+        pushButton_custom3->setObjectName(QStringLiteral("pushButton_custom3"));
+        pushButton_custom3->setMaximumSize(QSize(30, 20));
+
+        horizontalLayout_26->addWidget(pushButton_custom3);
+
 
         verticalLayout_3->addLayout(horizontalLayout_26);
 
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setSpacing(6);
         horizontalLayout_11->setObjectName(QStringLiteral("horizontalLayout_11"));
-        checkBox_custom4 = new QCheckBox(layoutWidget3);
-        checkBox_custom4->setObjectName(QStringLiteral("checkBox_custom4"));
-
-        horizontalLayout_11->addWidget(checkBox_custom4);
-
         lineEdit_custom4_name = new QLineEdit(layoutWidget3);
         lineEdit_custom4_name->setObjectName(QStringLiteral("lineEdit_custom4_name"));
         lineEdit_custom4_name->setMaximumSize(QSize(40, 20));
@@ -744,17 +739,23 @@ public:
 
         horizontalLayout_11->addWidget(lineEdit_custom4_key);
 
+        checkBox_custom4 = new QCheckBox(layoutWidget3);
+        checkBox_custom4->setObjectName(QStringLiteral("checkBox_custom4"));
+
+        horizontalLayout_11->addWidget(checkBox_custom4);
+
+        pushButton_custom4 = new QPushButton(layoutWidget3);
+        pushButton_custom4->setObjectName(QStringLiteral("pushButton_custom4"));
+        pushButton_custom4->setMaximumSize(QSize(30, 20));
+
+        horizontalLayout_11->addWidget(pushButton_custom4);
+
 
         verticalLayout_3->addLayout(horizontalLayout_11);
 
         horizontalLayout_25 = new QHBoxLayout();
         horizontalLayout_25->setSpacing(6);
         horizontalLayout_25->setObjectName(QStringLiteral("horizontalLayout_25"));
-        checkBox_custom5 = new QCheckBox(layoutWidget3);
-        checkBox_custom5->setObjectName(QStringLiteral("checkBox_custom5"));
-
-        horizontalLayout_25->addWidget(checkBox_custom5);
-
         lineEdit_custom5_name = new QLineEdit(layoutWidget3);
         lineEdit_custom5_name->setObjectName(QStringLiteral("lineEdit_custom5_name"));
         lineEdit_custom5_name->setMaximumSize(QSize(40, 20));
@@ -766,17 +767,23 @@ public:
 
         horizontalLayout_25->addWidget(lineEdit_custom5_key);
 
+        checkBox_custom5 = new QCheckBox(layoutWidget3);
+        checkBox_custom5->setObjectName(QStringLiteral("checkBox_custom5"));
+
+        horizontalLayout_25->addWidget(checkBox_custom5);
+
+        pushButton_custom5 = new QPushButton(layoutWidget3);
+        pushButton_custom5->setObjectName(QStringLiteral("pushButton_custom5"));
+        pushButton_custom5->setMaximumSize(QSize(30, 20));
+
+        horizontalLayout_25->addWidget(pushButton_custom5);
+
 
         verticalLayout_3->addLayout(horizontalLayout_25);
 
         horizontalLayout_12 = new QHBoxLayout();
         horizontalLayout_12->setSpacing(6);
         horizontalLayout_12->setObjectName(QStringLiteral("horizontalLayout_12"));
-        checkBox_custom6 = new QCheckBox(layoutWidget3);
-        checkBox_custom6->setObjectName(QStringLiteral("checkBox_custom6"));
-
-        horizontalLayout_12->addWidget(checkBox_custom6);
-
         lineEdit_custom6_name = new QLineEdit(layoutWidget3);
         lineEdit_custom6_name->setObjectName(QStringLiteral("lineEdit_custom6_name"));
         lineEdit_custom6_name->setMaximumSize(QSize(40, 20));
@@ -788,27 +795,44 @@ public:
 
         horizontalLayout_12->addWidget(lineEdit_custom6_key);
 
+        checkBox_custom6 = new QCheckBox(layoutWidget3);
+        checkBox_custom6->setObjectName(QStringLiteral("checkBox_custom6"));
+
+        horizontalLayout_12->addWidget(checkBox_custom6);
+
+        pushButton_custom6 = new QPushButton(layoutWidget3);
+        pushButton_custom6->setObjectName(QStringLiteral("pushButton_custom6"));
+        pushButton_custom6->setMaximumSize(QSize(30, 20));
+
+        horizontalLayout_12->addWidget(pushButton_custom6);
+
 
         verticalLayout_3->addLayout(horizontalLayout_12);
 
         horizontalLayout_24 = new QHBoxLayout();
         horizontalLayout_24->setSpacing(6);
         horizontalLayout_24->setObjectName(QStringLiteral("horizontalLayout_24"));
+        lineEdit_custom7_name = new QLineEdit(layoutWidget3);
+        lineEdit_custom7_name->setObjectName(QStringLiteral("lineEdit_custom7_name"));
+        lineEdit_custom7_name->setMaximumSize(QSize(40, 20));
+
+        horizontalLayout_24->addWidget(lineEdit_custom7_name);
+
+        lineEdit_custom7_key = new QLineEdit(layoutWidget3);
+        lineEdit_custom7_key->setObjectName(QStringLiteral("lineEdit_custom7_key"));
+
+        horizontalLayout_24->addWidget(lineEdit_custom7_key);
+
         checkBox_custom7 = new QCheckBox(layoutWidget3);
         checkBox_custom7->setObjectName(QStringLiteral("checkBox_custom7"));
 
         horizontalLayout_24->addWidget(checkBox_custom7);
 
-        lineEdit_custom8_name = new QLineEdit(layoutWidget3);
-        lineEdit_custom8_name->setObjectName(QStringLiteral("lineEdit_custom8_name"));
-        lineEdit_custom8_name->setMaximumSize(QSize(40, 20));
+        pushButton_custom7 = new QPushButton(layoutWidget3);
+        pushButton_custom7->setObjectName(QStringLiteral("pushButton_custom7"));
+        pushButton_custom7->setMaximumSize(QSize(30, 20));
 
-        horizontalLayout_24->addWidget(lineEdit_custom8_name);
-
-        lineEdit_custom8_key = new QLineEdit(layoutWidget3);
-        lineEdit_custom8_key->setObjectName(QStringLiteral("lineEdit_custom8_key"));
-
-        horizontalLayout_24->addWidget(lineEdit_custom8_key);
+        horizontalLayout_24->addWidget(pushButton_custom7);
 
 
         verticalLayout_3->addLayout(horizontalLayout_24);
@@ -816,21 +840,27 @@ public:
         horizontalLayout_13 = new QHBoxLayout();
         horizontalLayout_13->setSpacing(6);
         horizontalLayout_13->setObjectName(QStringLiteral("horizontalLayout_13"));
-        checkBox_custom9 = new QCheckBox(layoutWidget3);
-        checkBox_custom9->setObjectName(QStringLiteral("checkBox_custom9"));
+        lineEdit_custom8_name = new QLineEdit(layoutWidget3);
+        lineEdit_custom8_name->setObjectName(QStringLiteral("lineEdit_custom8_name"));
+        lineEdit_custom8_name->setMaximumSize(QSize(40, 20));
 
-        horizontalLayout_13->addWidget(checkBox_custom9);
+        horizontalLayout_13->addWidget(lineEdit_custom8_name);
 
-        lineEdit_custom9_name = new QLineEdit(layoutWidget3);
-        lineEdit_custom9_name->setObjectName(QStringLiteral("lineEdit_custom9_name"));
-        lineEdit_custom9_name->setMaximumSize(QSize(40, 20));
+        lineEdit_custom8_key = new QLineEdit(layoutWidget3);
+        lineEdit_custom8_key->setObjectName(QStringLiteral("lineEdit_custom8_key"));
 
-        horizontalLayout_13->addWidget(lineEdit_custom9_name);
+        horizontalLayout_13->addWidget(lineEdit_custom8_key);
 
-        lineEdit_custom9_key = new QLineEdit(layoutWidget3);
-        lineEdit_custom9_key->setObjectName(QStringLiteral("lineEdit_custom9_key"));
+        checkBox_custom8 = new QCheckBox(layoutWidget3);
+        checkBox_custom8->setObjectName(QStringLiteral("checkBox_custom8"));
 
-        horizontalLayout_13->addWidget(lineEdit_custom9_key);
+        horizontalLayout_13->addWidget(checkBox_custom8);
+
+        pushButton_custom8 = new QPushButton(layoutWidget3);
+        pushButton_custom8->setObjectName(QStringLiteral("pushButton_custom8"));
+        pushButton_custom8->setMaximumSize(QSize(30, 20));
+
+        horizontalLayout_13->addWidget(pushButton_custom8);
 
 
         verticalLayout_3->addLayout(horizontalLayout_13);
@@ -838,21 +868,27 @@ public:
         horizontalLayout_14 = new QHBoxLayout();
         horizontalLayout_14->setSpacing(6);
         horizontalLayout_14->setObjectName(QStringLiteral("horizontalLayout_14"));
-        checkBox_custom10 = new QCheckBox(layoutWidget3);
-        checkBox_custom10->setObjectName(QStringLiteral("checkBox_custom10"));
+        lineEdit_custom9_name = new QLineEdit(layoutWidget3);
+        lineEdit_custom9_name->setObjectName(QStringLiteral("lineEdit_custom9_name"));
+        lineEdit_custom9_name->setMaximumSize(QSize(40, 20));
 
-        horizontalLayout_14->addWidget(checkBox_custom10);
+        horizontalLayout_14->addWidget(lineEdit_custom9_name);
 
-        lineEdit_custom10_name = new QLineEdit(layoutWidget3);
-        lineEdit_custom10_name->setObjectName(QStringLiteral("lineEdit_custom10_name"));
-        lineEdit_custom10_name->setMaximumSize(QSize(40, 20));
+        lineEdit_custom9_key = new QLineEdit(layoutWidget3);
+        lineEdit_custom9_key->setObjectName(QStringLiteral("lineEdit_custom9_key"));
 
-        horizontalLayout_14->addWidget(lineEdit_custom10_name);
+        horizontalLayout_14->addWidget(lineEdit_custom9_key);
 
-        lineEdit_custom10_key = new QLineEdit(layoutWidget3);
-        lineEdit_custom10_key->setObjectName(QStringLiteral("lineEdit_custom10_key"));
+        checkBox_custom9 = new QCheckBox(layoutWidget3);
+        checkBox_custom9->setObjectName(QStringLiteral("checkBox_custom9"));
 
-        horizontalLayout_14->addWidget(lineEdit_custom10_key);
+        horizontalLayout_14->addWidget(checkBox_custom9);
+
+        pushButton_custom9 = new QPushButton(layoutWidget3);
+        pushButton_custom9->setObjectName(QStringLiteral("pushButton_custom9"));
+        pushButton_custom9->setMaximumSize(QSize(30, 20));
+
+        horizontalLayout_14->addWidget(pushButton_custom9);
 
 
         verticalLayout_3->addLayout(horizontalLayout_14);
@@ -860,21 +896,27 @@ public:
         horizontalLayout_15 = new QHBoxLayout();
         horizontalLayout_15->setSpacing(6);
         horizontalLayout_15->setObjectName(QStringLiteral("horizontalLayout_15"));
-        checkBox_custom11 = new QCheckBox(layoutWidget3);
-        checkBox_custom11->setObjectName(QStringLiteral("checkBox_custom11"));
+        lineEdit_custom10_name = new QLineEdit(layoutWidget3);
+        lineEdit_custom10_name->setObjectName(QStringLiteral("lineEdit_custom10_name"));
+        lineEdit_custom10_name->setMaximumSize(QSize(40, 20));
 
-        horizontalLayout_15->addWidget(checkBox_custom11);
+        horizontalLayout_15->addWidget(lineEdit_custom10_name);
 
-        lineEdit_custom11_name = new QLineEdit(layoutWidget3);
-        lineEdit_custom11_name->setObjectName(QStringLiteral("lineEdit_custom11_name"));
-        lineEdit_custom11_name->setMaximumSize(QSize(40, 20));
+        lineEdit_custom10_key = new QLineEdit(layoutWidget3);
+        lineEdit_custom10_key->setObjectName(QStringLiteral("lineEdit_custom10_key"));
 
-        horizontalLayout_15->addWidget(lineEdit_custom11_name);
+        horizontalLayout_15->addWidget(lineEdit_custom10_key);
 
-        lineEdit_custom11_key = new QLineEdit(layoutWidget3);
-        lineEdit_custom11_key->setObjectName(QStringLiteral("lineEdit_custom11_key"));
+        checkBox_custom10 = new QCheckBox(layoutWidget3);
+        checkBox_custom10->setObjectName(QStringLiteral("checkBox_custom10"));
 
-        horizontalLayout_15->addWidget(lineEdit_custom11_key);
+        horizontalLayout_15->addWidget(checkBox_custom10);
+
+        pushButton_custom10 = new QPushButton(layoutWidget3);
+        pushButton_custom10->setObjectName(QStringLiteral("pushButton_custom10"));
+        pushButton_custom10->setMaximumSize(QSize(30, 20));
+
+        horizontalLayout_15->addWidget(pushButton_custom10);
 
 
         verticalLayout_3->addLayout(horizontalLayout_15);
@@ -882,28 +924,36 @@ public:
         horizontalLayout_16 = new QHBoxLayout();
         horizontalLayout_16->setSpacing(6);
         horizontalLayout_16->setObjectName(QStringLiteral("horizontalLayout_16"));
-        checkBox_custom12 = new QCheckBox(layoutWidget3);
-        checkBox_custom12->setObjectName(QStringLiteral("checkBox_custom12"));
+        lineEdit_custom11_name = new QLineEdit(layoutWidget3);
+        lineEdit_custom11_name->setObjectName(QStringLiteral("lineEdit_custom11_name"));
+        lineEdit_custom11_name->setMaximumSize(QSize(40, 20));
 
-        horizontalLayout_16->addWidget(checkBox_custom12);
+        horizontalLayout_16->addWidget(lineEdit_custom11_name);
 
-        lineEdit_custom12_name = new QLineEdit(layoutWidget3);
-        lineEdit_custom12_name->setObjectName(QStringLiteral("lineEdit_custom12_name"));
-        lineEdit_custom12_name->setMaximumSize(QSize(40, 20));
+        lineEdit_custom11_key = new QLineEdit(layoutWidget3);
+        lineEdit_custom11_key->setObjectName(QStringLiteral("lineEdit_custom11_key"));
 
-        horizontalLayout_16->addWidget(lineEdit_custom12_name);
+        horizontalLayout_16->addWidget(lineEdit_custom11_key);
 
-        lineEdit_custom12_key = new QLineEdit(layoutWidget3);
-        lineEdit_custom12_key->setObjectName(QStringLiteral("lineEdit_custom12_key"));
+        checkBox_custom11 = new QCheckBox(layoutWidget3);
+        checkBox_custom11->setObjectName(QStringLiteral("checkBox_custom11"));
 
-        horizontalLayout_16->addWidget(lineEdit_custom12_key);
+        horizontalLayout_16->addWidget(checkBox_custom11);
+
+        pushButton_custom11 = new QPushButton(layoutWidget3);
+        pushButton_custom11->setObjectName(QStringLiteral("pushButton_custom11"));
+        pushButton_custom11->setMaximumSize(QSize(30, 16777215));
+
+        horizontalLayout_16->addWidget(pushButton_custom11);
 
 
         verticalLayout_3->addLayout(horizontalLayout_16);
 
         label_pic = new QLabel(centralWidget);
         label_pic->setObjectName(QStringLiteral("label_pic"));
-        label_pic->setGeometry(QRect(590, 360, 54, 12));
+        label_pic->setEnabled(true);
+        label_pic->setGeometry(QRect(600, 345, 50, 50));
+        label_pic->setStyleSheet(QStringLiteral("image: url(:/image/orange_noColor.png);"));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -928,6 +978,7 @@ public:
         menuBar->addAction(menu_V->menuAction());
         menuBar->addAction(menu_T->menuAction());
         menuBar->addAction(menu_H->menuAction());
+        menu_F->addAction(action_E);
         menu_V->addAction(action_S_2);
         menu_V->addAction(actionTCP_IP_T);
         menu_T->addAction(action_S);
@@ -936,7 +987,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -950,6 +1001,7 @@ public:
         action_U->setText(QApplication::translate("MainWindow", "\344\275\277\347\224\250\346\211\213\345\206\214(U)", Q_NULLPTR));
         action_S_2->setText(QApplication::translate("MainWindow", "\344\270\262\345\217\243\350\247\206\345\233\276(&S)", Q_NULLPTR));
         actionTCP_IP_T->setText(QApplication::translate("MainWindow", "TCP/IP\350\247\206\345\233\276(&T)", Q_NULLPTR));
+        action_E->setText(QApplication::translate("MainWindow", "\351\200\200\345\207\272(&E)", Q_NULLPTR));
         pushButton_send->setText(QApplication::translate("MainWindow", "\345\217\221\351\200\201", Q_NULLPTR));
         pushButton_open->setText(QApplication::translate("MainWindow", "\346\211\223\345\274\200", Q_NULLPTR));
         pushButton_clear_dispaly->setText(QApplication::translate("MainWindow", "\346\270\205\347\251\272\346\216\245\346\224\266\345\214\272", Q_NULLPTR));
@@ -1012,64 +1064,39 @@ public:
         checkBox_show_send->setText(QApplication::translate("MainWindow", "\346\230\276\347\244\272\345\217\221\351\200\201", Q_NULLPTR));
         checkBox_show_time->setText(QApplication::translate("MainWindow", "\346\230\276\347\244\272\346\227\266\351\227\264", Q_NULLPTR));
         label_8->setText(QApplication::translate("MainWindow", "\346\216\245\346\224\266\350\256\276\347\275\256", Q_NULLPTR));
-        label_17->setText(QApplication::translate("MainWindow", "\344\270\262  \345\217\243", Q_NULLPTR));
+        label_17->setText(QApplication::translate("MainWindow", "\346\250\241  \345\274\217", Q_NULLPTR));
         comboBox_13->clear();
         comboBox_13->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "Default", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "TCP client", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "TCP server", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "UDP client", Q_NULLPTR)
+         << QApplication::translate("MainWindow", "UDP server", Q_NULLPTR)
         );
-        label_18->setText(QApplication::translate("MainWindow", "\346\263\242\347\211\271\347\216\207", Q_NULLPTR));
-        comboBox_14->clear();
-        comboBox_14->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "115200", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "57600", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "38400", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "19200", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "9600", Q_NULLPTR)
-        );
-        label_19->setText(QApplication::translate("MainWindow", "\346\225\260\346\215\256\344\275\215", Q_NULLPTR));
-        comboBox_15->clear();
-        comboBox_15->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "8", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "7", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "6", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "5", Q_NULLPTR)
-        );
-        label_20->setText(QApplication::translate("MainWindow", "\346\240\241\351\252\214\344\275\215", Q_NULLPTR));
-        comboBox_16->clear();
-        comboBox_16->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "None", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "Even", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "Odd", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "Mark", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "Space", Q_NULLPTR)
-        );
-        label_21->setText(QApplication::translate("MainWindow", "\345\201\234\346\255\242\344\275\215", Q_NULLPTR));
-        comboBox_17->clear();
-        comboBox_17->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "1", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "1.5", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "2", Q_NULLPTR)
-        );
-        label_22->setText(QApplication::translate("MainWindow", "\346\265\201  \346\216\247", Q_NULLPTR));
-        comboBox_18->clear();
-        comboBox_18->insertItems(0, QStringList()
-         << QApplication::translate("MainWindow", "1", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "1.5", Q_NULLPTR)
-         << QApplication::translate("MainWindow", "2", Q_NULLPTR)
-        );
+        label_18->setText(QApplication::translate("MainWindow", "\347\233\256\346\240\207IP", Q_NULLPTR));
+        label_19->setText(QApplication::translate("MainWindow", "\347\253\257  \345\217\243", Q_NULLPTR));
         label_23->setText(QApplication::translate("MainWindow", "TCP/IP", Q_NULLPTR));
-        label_24->setText(QApplication::translate("MainWindow", "TextLabel", Q_NULLPTR));
         checkBox_custom1->setText(QString());
+        pushButton_custom1->setText(QApplication::translate("MainWindow", "TR", Q_NULLPTR));
         checkBox_custom2->setText(QString());
+        pushButton_custom2->setText(QApplication::translate("MainWindow", "TR", Q_NULLPTR));
         checkBox_custom3->setText(QString());
+        pushButton_custom3->setText(QApplication::translate("MainWindow", "TR", Q_NULLPTR));
         checkBox_custom4->setText(QString());
+        pushButton_custom4->setText(QApplication::translate("MainWindow", "TR", Q_NULLPTR));
         checkBox_custom5->setText(QString());
+        pushButton_custom5->setText(QApplication::translate("MainWindow", "TR", Q_NULLPTR));
         checkBox_custom6->setText(QString());
+        pushButton_custom6->setText(QApplication::translate("MainWindow", "TR", Q_NULLPTR));
         checkBox_custom7->setText(QString());
+        pushButton_custom7->setText(QApplication::translate("MainWindow", "TR", Q_NULLPTR));
+        checkBox_custom8->setText(QString());
+        pushButton_custom8->setText(QApplication::translate("MainWindow", "TR", Q_NULLPTR));
         checkBox_custom9->setText(QString());
+        pushButton_custom9->setText(QApplication::translate("MainWindow", "TR", Q_NULLPTR));
         checkBox_custom10->setText(QString());
+        pushButton_custom10->setText(QApplication::translate("MainWindow", "TR", Q_NULLPTR));
         checkBox_custom11->setText(QString());
-        checkBox_custom12->setText(QString());
+        pushButton_custom11->setText(QApplication::translate("MainWindow", "TR", Q_NULLPTR));
         label_pic->setText(QString());
         menu_F->setTitle(QApplication::translate("MainWindow", "\346\226\207\344\273\266(&F)", Q_NULLPTR));
         menu_E->setTitle(QApplication::translate("MainWindow", "\347\274\226\350\276\221(&E)", Q_NULLPTR));

@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[10];
-    char stringdata0[174];
+    QByteArrayData data[14];
+    char stringdata0[249];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,22 +32,29 @@ struct qt_meta_stringdata_MainWindow_t {
 static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 26), // "on_pushButton_open_clicked"
-QT_MOC_LITERAL(2, 38, 0), // ""
-QT_MOC_LITERAL(3, 39, 35), // "on_pushButton_clear_dispaly_c..."
-QT_MOC_LITERAL(4, 75, 26), // "on_pushButton_send_clicked"
-QT_MOC_LITERAL(5, 102, 7), // "display"
-QT_MOC_LITERAL(6, 110, 19), // "searchAndShowResult"
-QT_MOC_LITERAL(7, 130, 15), // "showAboutDialog"
-QT_MOC_LITERAL(8, 146, 16), // "showSerialResult"
-QT_MOC_LITERAL(9, 163, 10) // "repeatSend"
+QT_MOC_LITERAL(1, 11, 10), // "showConent"
+QT_MOC_LITERAL(2, 22, 0), // ""
+QT_MOC_LITERAL(3, 23, 26), // "on_pushButton_open_clicked"
+QT_MOC_LITERAL(4, 50, 35), // "on_pushButton_clear_dispaly_c..."
+QT_MOC_LITERAL(5, 86, 26), // "on_pushButton_send_clicked"
+QT_MOC_LITERAL(6, 113, 7), // "display"
+QT_MOC_LITERAL(7, 121, 11), // "readMessage"
+QT_MOC_LITERAL(8, 133, 19), // "searchAndShowResult"
+QT_MOC_LITERAL(9, 153, 15), // "showAboutDialog"
+QT_MOC_LITERAL(10, 169, 16), // "showSerialResult"
+QT_MOC_LITERAL(11, 186, 10), // "repeatSend"
+QT_MOC_LITERAL(12, 197, 23), // "on_action_S_2_triggered"
+QT_MOC_LITERAL(13, 221, 27) // "on_actionTCP_IP_T_triggered"
 
     },
-    "MainWindow\0on_pushButton_open_clicked\0"
-    "\0on_pushButton_clear_dispaly_clicked\0"
+    "MainWindow\0showConent\0\0"
+    "on_pushButton_open_clicked\0"
+    "on_pushButton_clear_dispaly_clicked\0"
     "on_pushButton_send_clicked\0display\0"
-    "searchAndShowResult\0showAboutDialog\0"
-    "showSerialResult\0repeatSend"
+    "readMessage\0searchAndShowResult\0"
+    "showAboutDialog\0showSerialResult\0"
+    "repeatSend\0on_action_S_2_triggered\0"
+    "on_actionTCP_IP_T_triggered"
 };
 #undef QT_MOC_LITERAL
 
@@ -57,24 +64,36 @@ static const uint qt_meta_data_MainWindow[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       1,       // signalCount
+
+ // signals: name, argc, parameters, tag, flags
+       1,    0,   74,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   54,    2, 0x08 /* Private */,
-       3,    0,   55,    2, 0x08 /* Private */,
-       4,    0,   56,    2, 0x08 /* Private */,
-       5,    0,   57,    2, 0x08 /* Private */,
-       6,    0,   58,    2, 0x08 /* Private */,
-       7,    0,   59,    2, 0x08 /* Private */,
-       8,    0,   60,    2, 0x08 /* Private */,
-       9,    0,   61,    2, 0x08 /* Private */,
+       3,    0,   75,    2, 0x08 /* Private */,
+       4,    0,   76,    2, 0x08 /* Private */,
+       5,    0,   77,    2, 0x08 /* Private */,
+       6,    0,   78,    2, 0x08 /* Private */,
+       7,    0,   79,    2, 0x08 /* Private */,
+       8,    0,   80,    2, 0x08 /* Private */,
+       9,    0,   81,    2, 0x08 /* Private */,
+      10,    0,   82,    2, 0x08 /* Private */,
+      11,    0,   83,    2, 0x08 /* Private */,
+      12,    0,   84,    2, 0x08 /* Private */,
+      13,    0,   85,    2, 0x08 /* Private */,
+
+ // signals: parameters
+    QMetaType::Void,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -93,15 +112,29 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         MainWindow *_t = static_cast<MainWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_pushButton_open_clicked(); break;
-        case 1: _t->on_pushButton_clear_dispaly_clicked(); break;
-        case 2: _t->on_pushButton_send_clicked(); break;
-        case 3: _t->display(); break;
-        case 4: _t->searchAndShowResult(); break;
-        case 5: _t->showAboutDialog(); break;
-        case 6: _t->showSerialResult(); break;
-        case 7: _t->repeatSend(); break;
+        case 0: _t->showConent(); break;
+        case 1: _t->on_pushButton_open_clicked(); break;
+        case 2: _t->on_pushButton_clear_dispaly_clicked(); break;
+        case 3: _t->on_pushButton_send_clicked(); break;
+        case 4: _t->display(); break;
+        case 5: _t->readMessage(); break;
+        case 6: _t->searchAndShowResult(); break;
+        case 7: _t->showAboutDialog(); break;
+        case 8: _t->showSerialResult(); break;
+        case 9: _t->repeatSend(); break;
+        case 10: _t->on_action_S_2_triggered(); break;
+        case 11: _t->on_actionTCP_IP_T_triggered(); break;
         default: ;
+        }
+    } else if (_c == QMetaObject::IndexOfMethod) {
+        int *result = reinterpret_cast<int *>(_a[0]);
+        void **func = reinterpret_cast<void **>(_a[1]);
+        {
+            typedef void (MainWindow::*_t)();
+            if (*reinterpret_cast<_t *>(func) == static_cast<_t>(&MainWindow::showConent)) {
+                *result = 0;
+                return;
+            }
         }
     }
     Q_UNUSED(_a);
@@ -132,15 +165,21 @@ int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 12)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 8;
+        _id -= 12;
     }
     return _id;
+}
+
+// SIGNAL 0
+void MainWindow::showConent()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, Q_NULLPTR);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

@@ -62,6 +62,7 @@ void SerialTool::openSerialConfig()
         serialPort->setDataBits(QSerialPort::UnknownDataBits);
         break;
     }
+    //qDebug() << serialPort->dataBits();
     //set parity
     switch (0) {
     case 0:
@@ -155,5 +156,10 @@ bool SerialTool::checkPullSerial(QString serialName)
 bool SerialTool::isOpen()
 {
     return serialPort->isOpen();
+}
+
+void SerialTool::writeSerial(const QByteArray array)
+{
+    serialPort->write(array);
 }
 

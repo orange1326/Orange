@@ -17,12 +17,12 @@ public:
     QString serialStopBit;
     QString serialFlowBit;
     //Receive Set
-    QString displayForm;
+    bool displayForm;
     bool receiveAutoNewlineFlag;
     bool showSendContentFlag;
     bool showInfoTimeFlag;
     //Send Set
-    QString sendForm;
+    bool sendForm;
     bool sendAutoNewlineFlag;
     bool repeatSendFlag;
     int repeatSendmS;
@@ -37,6 +37,7 @@ public:
     QSerialPort *getCurrentOpenSerial();
     bool checkPullSerial(QString serialName);
     bool isOpen();
+    void writeSerial(const QByteArray array);
 public slots:
     void searchSerial();
 private:
